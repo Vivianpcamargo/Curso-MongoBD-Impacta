@@ -1,0 +1,21 @@
+Comandos Linux: 
+
+Instalar o servidor Apache: 
+
+sudo apt-get update  
+
+sudo apt-get install apache2 
+
+Instale o PHP e o módulo para o Apache: 
+
+sudo apt-get install php7.0 libapache2-mod-php7.0 
+
+E reinicie o servidor Apache2 com o comando: 
+
+systemctl restart apache2 
+
+ 
+
+Link utilizados na aula: 
+
+http://php.net/downloads.php
