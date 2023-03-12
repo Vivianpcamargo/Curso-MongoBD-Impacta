@@ -1,0 +1,31 @@
+Comandos que devem ser executados no mongo shell: 
+
+Criando o banco de dados classedb 
+
+use classedb 
+
+Criando o usuário para acessar este banco de dados: 
+
+db.createUser({user: “admin",pwd:"senha",roles:[{role:"root",db:"admin"}]}) 
+
+Mude o nome do usuário e a senha. 
+
+Teste os dados do usuário criado com o comando a seguir, deve retornar 1 indicando sucesso: 
+
+db.auth(‘admin’,’senha’) 
+
+Para listar os usuários que têm acesso ao banco de dados: 
+
+db.getUsers() 
+
+O comando para remover um usuário do banco de dados: 
+
+db.dropUsers(‘nomeUsuario’) 
+
+Para sair do banco de dados MongoDB execute: 
+
+exit 
+
+Adicionando um usuário com permissão de leitura e escrita para se conectar e acessar o banco de dados: 
+
+db.createUser({user: “nomeUsuario”,pwd: “senha”,roles:[“readWrite”]})
