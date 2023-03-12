@@ -1,0 +1,35 @@
+Comandos que devem ser executados linux: 
+
+Considerando que estamos utilizando a versão 7.0 do PHP, execute o comando a seguir: 
+
+sudo apt-get install php7.0-dev php7.0-cli php-pear 
+
+Caso sua versão do PHP seja diferente, no comando a seguir troque o X pela sua versão do PHP: 
+
+sudo apt-get install phpX-dev phpX-cli php-pear 
+
+Instalar a dependência a seguir: 
+
+sudo apt-get install libpcre3-dev 
+
+e depois execute o comando para instalar o mongodb 
+
+sudo pecl install mongodb 
+
+Agora deve alterar o arquivo php.ini. Para localizá-lo pode executar o comando a seguir: 
+
+find –name php.ini 
+
+Normalmente o arquivo php.ini pode ser encontrado em /etc/php/7.0/apache2. Inclua a linha a seguir abaixo da seção “Dynamic Extensions” para ficar mais organizado: 
+
+extension=mongodb.so 
+
+Reinicie o Apache2: 
+
+systemctl restart apache2 
+
+ 
+
+Link para baixar o drive para o windows: 
+
+http://pecl.php.net/package/mongodb
