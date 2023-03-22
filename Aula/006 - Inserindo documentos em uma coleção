@@ -1,0 +1,70 @@
+Comandos que devem ser executados no Mongo Shell 
+
+
+Selecionando o banco de dados classedb: 
+
+use classedb 
+
+Criando uma Coleção no MongoDB 
+
+db.createCollection('turma') 
+
+Para verificar a coleção criada, utilize o comando: 
+
+show collections 
+
+Para remover a coleção turma utilize o comando: 
+
+db.turma.drop()
+
+Outra forma de adicionar uma coleção é inserindo um documento na coleção mesmo que esta ainda não exista: 
+
+db.alunos.insert({‘nome’:’Marcos’}) 
+
+db.alunos.insert({'nome':'Pedro','turma':'Python','nota': 10}) 
+
+db.alunos.insert({'nome':'Maria', 'turma':'MySQL','nota': 7}) 
+
+db.alunos.insert({'nome': 'Carolina',	'sobrenome': 'Ferreira','sexo': 'feminino','idade': 29,	'email': 'carol@yahoo.com', 'materias': ['MongoDB','Riak','Java'], 	'notas': {'MongoDB': 10, 'Riak': 8, 'Java': 9}}) 
+
+db.alunos.insert({'nome': 'Juliana','sobrenome': 'Silva','sexo': 'feminino','idade': 21,'materias': ['Riak','Python']}) 
+
+
+Comando para buscar documentos em uma coleção: 
+
+db.alunos.find() 
+
+Melhorando a apresentação dos documentos utilizando o pretty(): 
+
+db.alunos.find().pretty(); 
+
+Comando para listar somente o primeiro documento: 
+
+db.alunos.findOne() 
+
+Comando para contar o número de documentos em uma coleção: 
+
+db.alunos.count() 
+
+Listando apenas o registro da Carolina 
+
+db.alunos.find({'nome':'Carolina'}).pretty() 
+
+db.alunos.find({sexo:'feminino'}) 
+
+db.alunos.find({materias:'MongoDB'}) 
+
+db.alunos.find({'materias':'MongoDB', 'sexo':‘feminino'}) 
+
+
+Atualizando um documento 
+
+db.alunos.update({'nome':'Carolina'},{$set:  {'sobrenome':'Ferreira Martins'}}) 
+
+Atualizando todos os documentos que atendem ao filtro 
+
+db.alunos.update({ },{ $set: { 'aprovado': true  } },{ multi: true }) 
+
+Removendo um documento 
+
+db.alunos.remove({'sobrenome':'Ferreira Martins'}) 
